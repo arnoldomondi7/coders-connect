@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "mini-social network for developers, written in MERN stark",
+  "main": "server.js",
+  "repository": "https://github.com/arnoldomondi7/coders-connect",
+  "author": "Arnold Omondi",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon -r esm server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
