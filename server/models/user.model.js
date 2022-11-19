@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
 
-//create the mode;.
 const UserModel = new Schema({
     name: {
         type: String,
@@ -11,22 +10,24 @@ const UserModel = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     password: {
         type: String,
         required: true,
         min: 8,
-        max: 999
+        max: 99
     },
     updated: Date,
     created: {
         type: Date,
         default: Date.now
     }
+
 })
 
 const userData = model('User', UserModel)
 
+//export the data.
 export default userData

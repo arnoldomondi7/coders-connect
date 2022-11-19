@@ -1,12 +1,22 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "mini-social network for developers, written in MERN stark",
+  "description": "A MERN stack design to create a auth-system",
   "main": "server.js",
-  "repository": "https://github.com/arnoldomondi7/coders-connect",
   "author": "Arnold Omondi",
   "license": "MIT",
-  "private": false,
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "node",
+    "mern"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnoldomondi7/login-api.git"
+  },
+  "homepage": "https://github.com/arnoldomondi7/login-api",
   "scripts": {
     "dev": "nodemon -r esm server.js"
   },

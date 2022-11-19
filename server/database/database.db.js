@@ -1,16 +1,15 @@
 import mongoose from 'mongoose'
 import config from '../config/config.config'
 
-const connectToDb = () => {
+const connetToDb = () => {
     try {
-
-        mongoose.connect(config.mongodbUri)
+        mongoose.connect(config.mongoUri)
 
         //log a success message.
-        console.log(`Application Connected To The Database**`)
+        console.log(`**Database Is Connected Successfully**`)
     } catch (error) {
-        console.log('Connot Connect to the DB')
+        console.log(`Cannot connect to the database, because of ${error}`)
     }
 }
 
-export default connectToDb
+export default connetToDb

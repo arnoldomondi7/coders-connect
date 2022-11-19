@@ -1,8 +1,6 @@
 import express from 'express'
 
-const router = express.Router()
-
-//data from the controller.
+//controller function
 import {
     createUser,
     deleteUser,
@@ -12,24 +10,26 @@ import {
     userById
 } from '../controllers/user.contoller'
 
-//middleware to handle the requests.
-import { hasAuthorization, requireSignin } from '../middlewares/index.middleware'
+//middlewares to handle.
 
-//create the user.
+import { hasAuthorization, requireSignIn } from '../middlewares/auth.middleware'
+
+const router = express.Router()
+
+//sign up
 router.route('/signup').post(createUser)
-
-//read the users.
+//sign in
 router.route('/users').get(getUsers)
 
-//get access to the user.
-//get the user. //update the user //delete the users
+//get user, update user, delete user
 router.route('/user/:userId')
-    .get(requireSignin, getUser)
-    .put(requireSignin, hasAuthorization, updateUser)
-    .delete(requireSignin, hasAuthorization, deleteUser)
+    .get(requireSignIn, getUser)
+    .put(requireSignIn, hasAuthorization, updateUser)
+    .delete(requireSignIn, hasAuthorization, deleteUser)
 
-//handle the user.
+
+//handle the userId.
 router.param('userId', userById)
 
-//export the router.
+//export the routes.
 module.exports = router
