@@ -1,31 +1,24 @@
 import express from 'express'
 import helmet from 'helmet'
-import cookieParser from 'cookie-parser'
-import compress from 'compression'
+import compression from 'compression'
 import cors from 'cors'
 import { readdirSync } from 'fs'
-
-
 const morgan = require('morgan')
-
 //initiate the app.
 const app = express()
 
-//initiate the middlewares.
-app.use(express.json())
-app.use(cors())
+//utilize the middlewares.
 app.use(helmet())
-app.use(cookieParser())
-app.use(compress())
-app.use(morgan('dev'))
-
-
-
+app.use(compression())
+app.use(morgan('common'))
+app.use(cors())
+app.use(express.json())
 
 //handle the routes.
 readdirSync('./routes').map((route) => app.use('/api', require(`./routes/${route}`)))
 
 
 
-//export the app.
+
+//export the app to the main file.
 export default app

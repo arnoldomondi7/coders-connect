@@ -1,50 +1,49 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
-const { ObjectId } = Schema
 
-const UserModel = new Schema({
-    name: {
+// create the user schema.
+const UserSchema = new Schema({
+    username: {
         type: String,
-        required: true,
-        trim: true
+        require: true,
+        min: 2,
+        max: 44,
+        unique: true
     },
     email: {
         type: String,
-        required: true,
-        trim: true,
-        unique: true
+        require: true,
+        unique: true,
+        max: 55,
     },
     password: {
         type: String,
-        required: true,
-        min: 8,
-        max: 99
+        require: true,
+        min: 8
     },
-    updated: Date,
-    created: {
-        type: Date,
-        default: Date.now
-    },
-    about: {
+    profilePicture: {
         type: String,
-        trim: true
+        default: ''
     },
-    // photo: {
-    //     data: Buffer,
-    //     contentType: String
+    coverPicture: {
+        type: String,
+        default: ''
+    },
+    followers: {
+        type: Array,
+        default: []
+    },
+    following: {
+        type: Array,
+        default: []
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
+}, { timestamps: true })
 
-    // },
-    following: [{
-        type: ObjectId, ref: 'User'
-    }],
-    followers: [{
-        type: ObjectId, ref: 'User'
-    }]
+const userData = model('User', UserSchema)
 
-
-})
-
-const userData = model('User', UserModel)
-
-//export the data.
+//export the userData.
 export default userData
