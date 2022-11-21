@@ -2,6 +2,10 @@ import { hashPassword } from '../helpers/auth.helper'
 import User from '../models/user.model'
 import _ from 'lodash'
 
+
+const formidable = require('formidable')
+
+
 //create a new user
 export const createUser = async (req, res) => {
 
@@ -78,7 +82,12 @@ export const userById = async (req, res, next, id) => {
     try {
 
         //find the user by id
+        //populate the data's id and users.
+        //the followers and following.
         const user = await User.findById(id)
+            .populate('following', '_id name')
+            .populate('followers', '_id name')
+            .exec()
 
         //handle the error i
         if (!user) {
@@ -119,6 +128,8 @@ export const getUser = async (req, res) => {
 
 //update the user.
 export const updateUser = async (req, res) => {
+
+
     try {
 
         //hold the users data in the req.profile
@@ -126,6 +137,7 @@ export const updateUser = async (req, res) => {
 
         //use lodash to update.
         user = _.extend(user, req.body)
+        user.password = await hashPassword(req.body.password)
 
         //update the date.
         user.updated = Date.now()
@@ -145,6 +157,8 @@ export const updateUser = async (req, res) => {
         })
     }
 }
+
+
 
 //delete the user.
 export const deleteUser = async (req, res) => {
@@ -166,4 +180,49 @@ export const deleteUser = async (req, res) => {
         })
     }
 }
+
+
+//handle follow and unfollow.
+
+export const addFollowing = async (req, res, next) => {
+    try {
+        await User.findByIdAndUpdate(req.body.userId, { $push: { following: req.body.followId } })
+
+        next()
+    } catch (error) {
+        return res.status(400).json({
+            error: 'Unable to follow user,'
+        })
+    }
+}
+
+export const addFollower = async (req, res) => {
+    try {
+        let result = await User.findByIdAndUpdate(req.body.followId,
+            { $push: { followers: req.body.userId } }, { new: true })
+            .populate('following', '_id name')
+            .populate('followers', '_id name')
+            .exec()
+
+        //block the password.
+        result.password = undefined
+        res.json(result)
+    } catch (error) {
+        return res.status(400).json({
+            error: 'Unable to get a follower,'
+        })
+    }
+}
+
+
+export const removeFollowing = async (req, res) => {
+
+}
+
+
+export const removeFollower = async (req, res) => {
+
+}
+
+
 

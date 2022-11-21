@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
+const { ObjectId } = Schema
 
 const UserModel = new Schema({
     name: {
@@ -23,7 +24,23 @@ const UserModel = new Schema({
     created: {
         type: Date,
         default: Date.now
-    }
+    },
+    about: {
+        type: String,
+        trim: true
+    },
+    // photo: {
+    //     data: Buffer,
+    //     contentType: String
+
+    // },
+    following: [{
+        type: ObjectId, ref: 'User'
+    }],
+    followers: [{
+        type: ObjectId, ref: 'User'
+    }]
+
 
 })
 

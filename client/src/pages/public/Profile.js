@@ -19,9 +19,9 @@ import {
     Typography
 } from '@mui/material'
 import theme from '../../theme'
-import PersonIcon from '@mui/icons-material/Person'
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteUser from './DeleteUser'
+import Person4Icon from '@mui/icons-material/Person4'
 
 function Profile() {
     const [user, setUser] = useState({})
@@ -76,6 +76,8 @@ function Profile() {
     }, [jwt.token, navigate, userId])
 
 
+
+
     return (
 
         <Paper sx={{
@@ -94,8 +96,9 @@ function Profile() {
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar>
-                            <PersonIcon />
+                            <Person4Icon />
                         </Avatar>
+
                     </ListItemAvatar>
                     <ListItemText primary={user.name} secondary={user.email} />{
 
@@ -116,7 +119,7 @@ function Profile() {
                 </ListItem>
                 <Divider />
                 <ListItem>
-                    <ListItemText primary={"Joined: " + (
+                    <ListItemText primary={user.about} secondary={"Joined: " + (
                         new Date(user.created)).toDateString()} />
                 </ListItem>
             </List>

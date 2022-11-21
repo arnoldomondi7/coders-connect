@@ -14,7 +14,7 @@ export const signIn = async (req, res) => {
         //check to ensure that the email exists.
         const user = await User.findOne({ email })
 
-        //handle the error to ensure that the emaul exists.
+        //handle the error if email does not exist.
         if (!user) {
             return res.json({
                 error: 'User Does Not Exist, Please Sign Up'

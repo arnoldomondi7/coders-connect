@@ -5,6 +5,7 @@ import compress from 'compression'
 import cors from 'cors'
 import { readdirSync } from 'fs'
 
+
 const morgan = require('morgan')
 
 //initiate the app.
@@ -17,6 +18,9 @@ app.use(helmet())
 app.use(cookieParser())
 app.use(compress())
 app.use(morgan('dev'))
+
+
+
 
 //handle the routes.
 readdirSync('./routes').map((route) => app.use('/api', require(`./routes/${route}`)))

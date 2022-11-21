@@ -7,6 +7,7 @@ import auth from '../../auth/auth-helper'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import {
+
     Button,
     Card,
     CardActions,
@@ -16,11 +17,20 @@ import {
 } from '@mui/material'
 import theme from '../../theme'
 
+
 const Edit = () => {
 
     //handle the state.
     const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [about, setAbout] = useState('')
+
+
+
+
     const [loading, setLoading] = useState(false)
+
 
     //handle the param.
     const { userId } = useParams()
@@ -62,6 +72,8 @@ const Edit = () => {
 
                 //update the userState with this data.
                 setName(data.name)
+                setEmail(data.email)
+                setPassword(data.password)
 
             } catch (error) {
                 console.log(error.message)
@@ -76,16 +88,13 @@ const Edit = () => {
     }, [jwt.token, navigate, userId])
 
     //code to handle the function when its submitted.
-    const handleSubmit = async (event) => {
-        event.preventDefault()
+    const handleSubmit = async () => {
 
-        const jwt = auth.isAuthenticated()
 
-        setLoading(true)
 
         //api to update the data.
         const { data } = await axios.put(`${process.env.REACT_APP_API}/user/${userId}`, {
-            name
+            name, email, password, about
         }, {
 
             //pass the tokens.
@@ -104,6 +113,9 @@ const Edit = () => {
         navigate(`/user/${userId}`)
     }
 
+
+
+
     return (
         <Card sx={{
             maxWidth: 600,
@@ -113,17 +125,62 @@ const Edit = () => {
             paddingBottom: theme.spacing(2)
         }}>
             <CardContent>
-                <Typography> Edit</Typography>
+                <Typography> Edit Profile</Typography>
+
+
                 <TextField
                     sx={{
                         marginLeft: theme.spacing(1),
                         marginRight: theme.spacing(1),
                         width: 350
                     }}
-                    label='Name'
+                    label='Update The Name'
                     type='text'
                     value={name}
                     onChange={(event) => setName(event.target.value)}
+                    margin='normal'
+
+                />
+                <br />
+
+                <TextField
+                    sx={{
+                        marginLeft: theme.spacing(1),
+                        marginRight: theme.spacing(1),
+                        width: 350
+                    }}
+                    label='Update The Email'
+                    type='email'
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    margin='normal'
+
+                />
+                <br />
+                <TextField
+                    sx={{
+                        marginLeft: theme.spacing(1),
+                        marginRight: theme.spacing(1),
+                        width: 350
+                    }}
+                    id='multiline-flexible'
+                    label='Brief Bio About Yourself'
+                    multiline
+                    rows='2'
+                    value={about}
+                    onChange={(event) => setAbout(event.target.value)}
+                />
+
+                <TextField
+                    sx={{
+                        marginLeft: theme.spacing(1),
+                        marginRight: theme.spacing(1),
+                        width: 350
+                    }}
+                    label='Update Password'
+                    type='password'
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
                     margin='normal'
 
                 />
