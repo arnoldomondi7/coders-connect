@@ -1,15 +1,51 @@
 import User from '../models/user.model'
+import { hashPassword } from '../helpers/auth.helper'
 
 export const signUp = async (req, res) => {
-    //test the endpoint.
-    const user = new User({
-        username: 'Ali',
-        email: 'ali@gmail.com',
-        password: '09876543'
-    })
+    //destructure the data from the frontend.
+    const { username, email, password } = req.body
+    try {
 
-    //save the data.
-    await user.save()
+        //handle error.
+        if (!username) {
+            return res.json({
+                error: 'Username Is Required'
+            })
+        }
 
-    res.send('fine')
+        //check to see if the email already exist.
+        const match = await User.findOne({ email })
+
+        //handle the error
+        if (match) {
+            return res.json({
+                error: 'Please, pick another email'
+            })
+        }
+
+        if (!password || password.length < 8) {
+            return res.json({
+                error: 'Invalid Password, make sure its at least 8 characters'
+            })
+        }
+
+        //hash password.
+        const hashPwd = await hashPassword(password)
+        const user = new User({ username, email, password: hashPwd })
+
+        //save the user.
+        await user.save()
+
+        //send the data to the frontend.
+        res.status(201).json(user)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//login the user.
+export const signIn = async (req, res) => {
+    //test endpoint.
+    console.log(req.body)
 }
