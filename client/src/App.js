@@ -1,13 +1,16 @@
 import React from 'react'
-import MainRouter from './MainRouter'
-
+import MainRoute from './Mainroute'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
-  return (
-    <div >
-      <MainRouter />
-    </div>
-  )
+    return (
+        <div >
+            <BrowserRouter>
+                <MainRoute />
+            </BrowserRouter>
+
+        </div>
+    )
 }
 
 export default App
