@@ -24,26 +24,27 @@ const Top = () => {
         </div>
       </div>
       <div className="topRight">
-        <div className="notification">
-          <FontAwesomeIcon icon={faPerson} />
-          <span className="badge">1</span>
-        </div>
+        <div className="notifications">
+          <div className="notification">
+            <FontAwesomeIcon icon={faPerson} />
+            <span className="badge">1</span>
+          </div>
 
-        <div className="notification">
-          <FontAwesomeIcon icon={faMessage} />
-          <span className="badge">1</span>
-        </div>
+          <div className="notification">
+            <FontAwesomeIcon icon={faMessage} />
+            <span className="badge">5</span>
+          </div>
 
-        <div className="notification">
-          <FontAwesomeIcon icon={faBell} />
-          <span className="badge">1</span>
+          <div className="notification">
+            <FontAwesomeIcon icon={faBell} />
+            <span className="badge">1</span>
+          </div>
         </div>
         <div className="user">
           <img src="/assets/images/user/camille.jpg" alt="alts" className="userImage" />
           <span className="userLogout">Logout</span>
         </div>
       </div>
-
     </div>
   )
 }
