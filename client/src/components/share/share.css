@@ -1,0 +1,36 @@
+.share {
+    margin: 5px 15px;
+    padding: 30px 15px;
+    background-color: #eee;
+    border-radius: 20px;
+    width: 700px;
+}
+
+.shareGroups .shareGroup {
+    padding: 10px 0;
+}
+
+.shareGroups .shareGroup:first-child {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #fff;
+}
+
+
+
+.shareGroups .shareGroup .shareGroupLeft img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.shareGroups .shareGroup .shareGroupRight input {
+    border: none;
+    outline: none;
+    width: 620px;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+}

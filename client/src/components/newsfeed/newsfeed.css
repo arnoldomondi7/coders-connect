@@ -1,4 +1,6 @@
 .newsfeed{
     flex: 2;
-    background-color: red;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
 }

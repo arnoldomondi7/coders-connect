@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faPerson, faMessage, faBell } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
@@ -41,7 +40,7 @@ const Top = () => {
           </div>
         </div>
         <div className="user">
-          <img src="/assets/images/user/camille.jpg" alt="alts" className="userImage" />
+          <img src="/assets/images/user/model.jpg" alt="alts" className="userImage" />
           <span className="userLogout">Logout</span>
         </div>
       </div>

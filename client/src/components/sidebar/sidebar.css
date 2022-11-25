@@ -1,3 +1,57 @@
-.sidebar{
+.sidebar {
     flex: 1;
+    overflow-y: scroll;
+}
+
+.sidebar .sideBarGroups .sideBarGroup {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sideBarGroups .sideBarGroup:first-child {
+    margin-bottom: 30px;
+}
+
+.sidebar .sideBarGroups .sideBarGroup .hr {
+    margin-top: 30px;
+}
+
+.sidebar .sideBarGroups .sideBarGroup:hover {
+    background-color: #eee;
+
+}
+
+.sidebar .sideBarGroups .sideBarGroup .sidebarLink {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sideBarGroups .sideBarGroup .sidebarLink span {
+    padding-left: 10px;
+}
+
+.sidebar .sideBarGroups .sideBarGroup .currentUserImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar .sideBarGroups .sideBarGroup svg {
+    font-size: 20px;
+    color: #2e2e2e;
+    margin-right: 10px;
+}
+
+
+.sidebar .sideBarGroups .sideBarGroup button {
+  
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    transition: all 0.5s;
+    text-transform: uppercase;
 }

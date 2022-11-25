@@ -2,7 +2,7 @@ import React from 'react'
 import MainRoute from './Mainroute'
 import { BrowserRouter } from 'react-router-dom'
 
-function App() {
+const App = () => {
     return (
         <div >
             <BrowserRouter>
