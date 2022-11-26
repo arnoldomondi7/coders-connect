@@ -34,3 +34,57 @@
     padding-left: 10px;
     border-radius: 10px;
 }
+
+.shareGroup:last-child{
+ display: flex;
+}
+.shareGroupIcons{
+    display: flex;
+    flex: 3;
+}
+.shareGroupIcon{
+    margin-top: 20px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.shareGroupIcon:hover{
+    border-bottom: 1px solid #000;
+}
+
+.shareGroupIcon svg{
+    margin-right: 5px;
+}
+
+.shareGroupIcon:first-child svg{
+    color: #00ff00;
+}
+.shareGroupIcon:nth-child(2) svg{
+    color: #000;
+}
+.shareGroupIcon:nth-child(3) svg{
+    color: #ff0000;
+}
+.shareGroupIcon:last-child svg{
+    color: darkgoldenrod;
+}
+.shareGroupShareBtn{
+    margin-top: 20px;
+    flex: 1;
+}
+
+.shareGroupShareBtn button{
+    display: block;
+    margin: 0 0 0 auto;
+    background-color: #fff;
+    border: none;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.shareGroupShareBtn button:hover{
+    background-color: #000;
+    color: #fff;
+}

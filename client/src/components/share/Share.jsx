@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './share.css'
-import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons'
+import { faLocation, faPhotoFilm, faSmile, faTag } from '@fortawesome/free-solid-svg-icons'
 
 const Share = () => {
     return (
@@ -24,14 +24,21 @@ const Share = () => {
                             <span className="iconTitle">Photo or Video</span>
                         </div>
                         <div className="shareGroupIcon">
-
+                            <FontAwesomeIcon icon={faTag} />
+                            <span className="iconTitle">Tag</span>
                         </div>
                         <div className="shareGroupIcon">
-
+                            <FontAwesomeIcon icon={faLocation} />
+                            <span className="iconTitle">Location</span>
                         </div>
                         <div className="shareGroupIcon">
-
+                            <FontAwesomeIcon icon={faSmile} />
+                            <span className="iconTitle">Feelings</span>
                         </div>
+                    </div>
+
+                    <div className="shareGroupShareBtn">
+                        <button>Share</button>
                     </div>
                 </div>
             </div>

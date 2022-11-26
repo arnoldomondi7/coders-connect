@@ -37,7 +37,7 @@ const Story = () => {
                                 </div>
 
                                 <div className="storyUser">
-                                    <img src="/assets/images/user/girl.jpg" alt="storybody" className="storyUserAddImg" />
+                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
                                 </div>
 
                                 <div className="storyUserTitle">
@@ -53,7 +53,7 @@ const Story = () => {
                                 </div>
 
                                 <div className="storyUser">
-                                    <img src="/assets/images/user/girl.jpg" alt="storybody" className="storyUserAddImg" />
+                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
                                 </div>
 
                                 <div className="storyUserTitle">
@@ -69,7 +69,24 @@ const Story = () => {
                                 </div>
 
                                 <div className="storyUser">
-                                    <img src="/assets/images/user/girl.jpg" alt="storybody" className="storyUserAddImg" />
+                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
+                                </div>
+
+                                <div className="storyUserTitle">
+                                    <h5>Your Story</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="storyGroup">
+                            <div className="storyDiv">
+                                <div className="storyUserAddImgDiv">
+                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
+                                </div>
+
+                                <div className="storyUser">
+                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
                                 </div>
 
                                 <div className="storyUserTitle">
@@ -85,7 +102,7 @@ const Story = () => {
                                 </div>
 
                                 <div className="storyUser">
-                                    <img src="/assets/images/user/girl.jpg" alt="storybody" className="storyUserAddImg" />
+                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
                                 </div>
 
                                 <div className="storyUserTitle">
@@ -94,21 +111,6 @@ const Story = () => {
                             </div>
                         </div>
 
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/girl.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
                 </TabPanel>

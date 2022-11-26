@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/footer/Footer'
 import Newsfeed from '../../components/newsfeed/Newsfeed'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Sidebar from '../../components/sidebar/Sidebar'
@@ -15,6 +16,7 @@ const Home = () => {
                 <Newsfeed />
                 <Rightbar />
             </div>
+            <Footer />
         </>
     )
 }
