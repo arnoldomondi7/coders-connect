@@ -1,7 +1,11 @@
-.newsfeed{
-    flex: 2;
+.newsfeed {
+    flex: 3;
     background-color: #fff;
-    border-radius: 10px;
-    margin: 0 10px;
+    height: calc(100vh- 80px);
+    overflow-y: scroll;
+}
 
+
+.newsfeed::-webkit-scrollbar{
+    display: none;
 }

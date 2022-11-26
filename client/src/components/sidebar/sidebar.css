@@ -1,8 +1,13 @@
 .sidebar {
-    flex: 1;  
+    flex: 1;
+    position: sticky;
+    top: 0;
+    height: calc(100vh- 80px);
     overflow-y: scroll;
- 
-  
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar .sideBarGroups .sideBarGroup {
@@ -50,7 +55,7 @@
 
 
 .sidebar .sideBarGroups .sideBarGroup button {
-  
+
     background-color: transparent;
     padding: 5px 10px;
     border: none;

@@ -1,6 +1,7 @@
 .rightbar{
     flex:1;
     margin-top: 10px;
+    height: calc(100vh-80px);
 }
 .onlineUserImg{
     width: 40px;

@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'react-tabs/style/react-tabs.css'
 import './story.css'
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
+import { Stories } from '../../data'
+import Newstory from '../newstory/Newstory'
+
 
 const Story = () => {
     return (
@@ -20,7 +23,7 @@ const Story = () => {
                             <div className="storyCard">
                                 <label htmlFor='add'>
                                     <div className="storyBody">
-                                        <img src="/assets/images/user/model.jpg" alt="storybody" className="storyBodyImg" />
+                                        <img src='/assets/images/user/model.jpg' alt="storybody" className="storyBodyImg" />
                                     </div>
                                     <div className="storyFooter">
                                         <FontAwesomeIcon icon={faAdd} />
@@ -30,86 +33,13 @@ const Story = () => {
                                 <input type='file' id='add' className='hidden' />
                             </div>
                         </div>
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
 
 
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
+                        {Stories.map((s) => (
+                            <Newstory s={s} key={s.id} />
+                        ))
 
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="storyGroup">
-                            <div className="storyDiv">
-                                <div className="storyUserAddImgDiv">
-                                    <img src="/assets/images/user/model.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUser">
-                                    <img src="/assets/images/user/lights.jpg" alt="storybody" className="storyUserAddImg" />
-                                </div>
-
-                                <div className="storyUserTitle">
-                                    <h5>Your Story</h5>
-                                </div>
-                            </div>
-                        </div>
+                        }
 
 
                     </div>
