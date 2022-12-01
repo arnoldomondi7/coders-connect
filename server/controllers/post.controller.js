@@ -19,6 +19,7 @@ export const userPost = async (req, res) => {
 //update the post.
 export const updatePost = async (req, res) => {
     try {
+
         //find the post id.
         const post = await Post.findById(req.params.id)
 
@@ -36,9 +37,10 @@ export const updatePost = async (req, res) => {
     }
 }
 
-//update the post.
+//delete the post.
 export const deletePost = async (req, res) => {
     try {
+
         //find the post id.
         const post = await Post.findById(req.params.id)
 
@@ -60,6 +62,7 @@ export const deletePost = async (req, res) => {
 //like the post.
 export const likePost = async (req, res) => {
     try {
+
         //get the post by its id.
         const post = await Post.findById(req.params.id)
 
@@ -121,14 +124,17 @@ export const getPost = async (req, res) => {
 //get the timeline posts.
 export const timelinePosts = async (req, res) => {
     try {
+
         //get the cureent user.
         const currentUser = await User.findById(req.body.userId)
+
         //get the user posts.
         const userPosts = await Post.find({ userId: currentUser._id })
 
         //get post from everyone you are following.
         const followingPosts = await Promise.all(
             currentUser.following.map((followingPost) => {
+
                 //find all the post by the users who you follow.
                 return Post.find({ userId: followingPost })
             })

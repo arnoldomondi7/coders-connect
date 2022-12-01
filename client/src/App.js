@@ -1,11 +1,14 @@
 import React from 'react'
-import Home from './pages/home/Home.page'
+// import Home from './pages/home/Home.page'
+import Profile from './pages/profile/Profile'
+
 
 
 const App = () => {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
+      <Profile />
     </div>
   )
 }
