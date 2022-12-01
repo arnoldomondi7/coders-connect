@@ -37,6 +37,14 @@
     margin-top: 13px;
 }
 
+.profileInfoName{
+    font-size: 25px;
+}
+
+.profileDesc{
+    font-weight: 300;
+}
+
 .profileRightBottom{
     display: flex;
 }

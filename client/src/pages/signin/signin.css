@@ -1,0 +1,83 @@
+.signin {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signinWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+
+.signInRight,.signInLeft{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+.signInLogo{
+    font-size: 50px;
+    font-weight: 800;
+    color: #1775ee;
+}
+
+.siginDesc{
+    font-size: 24px;
+}
+
+.signInBox{
+    height: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signinInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+   
+}
+
+.signinInput:focus{
+    outline: none;
+}
+
+.signInButton{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1775ee;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.resetPassword{
+    text-align: center;
+    color: #1775ee;
+}
+
+.signInRegisterButton{
+    width: 50%;
+    align-self: center;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #42b72a;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
