@@ -1,0 +1,86 @@
+.topNav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.topNavLeft,
+.topNavMiddle,
+.topNavRight {
+	display: flex;
+	align-items: center;
+}
+
+.topNavLeft .logo {
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.topNavLeft .topNavSearch {
+	position: relative;
+	margin-left: 10px;
+}
+
+.topNavLeft .topNavSearch input {
+	border: none;
+	outline: none;
+	width: 200px;
+	padding: 0 10px;
+	color: #000;
+	background-color: rgba(238, 238, 238);
+	border-radius: 20px;
+	height: 30px;
+}
+
+.topNavLeft .topNavSearch svg {
+	position: absolute;
+	right: 10px;
+	bottom: 25%;
+}
+
+.topNavMiddle .topNavLinks ul {
+	display: flex;
+}
+
+.topNavMiddle .topNavLinks ul li {
+	margin-left: 10px;
+}
+
+.topNavMiddle .topNavLinks ul li a {
+	font-weight: bold;
+	text-transform: uppercase;
+	transform: all 0.5s;
+}
+
+.topNavMiddle .topNavLinks ul li a:hover {
+	border-bottom: 2px solid #000;
+}
+
+.topNavMiddle .topNavLinks ul li .active {
+	border-bottom: 2px solid #000;
+}
+
+.topNavRight .notifications {
+	display: flex;
+}
+
+.topNavRight .notifications .notification {
+	position: relative;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.topNavRight .notifications .notification .badge {
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	background-color: #ff0000;
+	color: #fff;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
