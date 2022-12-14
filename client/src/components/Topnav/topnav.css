@@ -1,6 +1,8 @@
 .topNav {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	height: 80px;
 }
 
 .topNavLeft,
@@ -8,6 +10,7 @@
 .topNavRight {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .topNavLeft .logo {
@@ -18,24 +21,24 @@
 
 .topNavLeft .topNavSearch {
 	position: relative;
-	margin-left: 10px;
+	margin-left: 11px;
 }
 
 .topNavLeft .topNavSearch input {
 	border: none;
 	outline: none;
 	width: 200px;
-	padding: 0 10px;
+	height: 30px;
+	padding: 0 11px;
 	color: #000;
 	background-color: rgba(238, 238, 238);
-	border-radius: 20px;
-	height: 30px;
+	border-radius: 21px;
 }
 
 .topNavLeft .topNavSearch svg {
 	position: absolute;
 	right: 10px;
-	bottom: 25%;
+	top: 25%;
 }
 
 .topNavMiddle .topNavLinks ul {
@@ -66,7 +69,7 @@
 
 .topNavRight .notifications .notification {
 	position: relative;
-	margin: 0 10px;
+	margin: 0 15px;
 	cursor: pointer;
 }
 
@@ -83,4 +86,26 @@
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
+}
+
+.topNavRight .user {
+	margin-left: 40px;
+	display: flex;
+	align-items: center;
+}
+
+.topNavRight .user .userImg {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.topNavRight .user .userLogout {
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+.topNavRight .user .userLogout:hover {
+	color: #a5a5a5;
 }

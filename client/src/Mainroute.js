@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './pages/Home/Home.page'
+import Home from './pages/home/Home.page'
 import { Routes, Route } from 'react-router-dom'
 
 const Mainroute = () => {

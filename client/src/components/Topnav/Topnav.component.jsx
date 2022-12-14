@@ -13,7 +13,7 @@ const Topnav = () => {
 	return (
 		<div className='topNav'>
 			<div className='topNavLeft'>
-				<h2 className='logo'>Codders-Connect</h2>
+				<h2 className='logo'>Coders-Connect</h2>
 				<div className='topNavSearch'>
 					<input type='text' placeholder='Search Anything' />
 					<FontAwesomeIcon icon={faSearch} />
@@ -56,7 +56,7 @@ const Topnav = () => {
 				</div>
 
 				<div className='user'>
-					{/* <img src='./assets/user/anodi.jpg' alt='anodi' className='userImg' /> */}
+					<img src='./assets/user/anodi.jpg' alt='anodi' className='userImg' />
 					<span className='userLogout'>Logout</span>
 				</div>
 			</div>
