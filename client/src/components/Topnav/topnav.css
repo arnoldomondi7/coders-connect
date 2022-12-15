@@ -1,8 +1,6 @@
 .topNav {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	height: 80px;
 }
 
 .topNavLeft,
@@ -10,35 +8,36 @@
 .topNavRight {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 }
 
 .topNavLeft .logo {
-	font-size: 30px;
 	text-transform: uppercase;
+	font-size: 30px;
 	font-weight: bold;
 }
 
-.topNavLeft .topNavSearch {
+.topNavLeft .topSearch {
 	position: relative;
-	margin-left: 11px;
+	margin-left: 10px;
 }
 
-.topNavLeft .topNavSearch input {
+.topNavLeft .topSearch input {
 	border: none;
 	outline: none;
 	width: 200px;
-	height: 30px;
-	padding: 0 11px;
-	color: #000;
+	border-radius: 20px;
 	background-color: rgba(238, 238, 238);
-	border-radius: 21px;
+	color: #000;
+	height: 30px;
+	padding: 0px 10px;
 }
 
-.topNavLeft .topNavSearch svg {
+.topNavLeft .topSearch svg {
 	position: absolute;
 	right: 10px;
 	top: 25%;
+	color: #a5a5a5;
+	cursor: pointer;
 }
 
 .topNavMiddle .topNavLinks ul {
@@ -46,66 +45,5 @@
 }
 
 .topNavMiddle .topNavLinks ul li {
-	margin-left: 10px;
-}
-
-.topNavMiddle .topNavLinks ul li a {
-	font-weight: bold;
-	text-transform: uppercase;
-	transform: all 0.5s;
-}
-
-.topNavMiddle .topNavLinks ul li a:hover {
-	border-bottom: 2px solid #000;
-}
-
-.topNavMiddle .topNavLinks ul li .active {
-	border-bottom: 2px solid #000;
-}
-
-.topNavRight .notifications {
-	display: flex;
-}
-
-.topNavRight .notifications .notification {
-	position: relative;
-	margin: 0 15px;
-	cursor: pointer;
-}
-
-.topNavRight .notifications .notification .badge {
-	position: absolute;
-	top: -10px;
-	left: 10px;
-	background-color: #ff0000;
-	color: #fff;
-	width: 15px;
-	height: 15px;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
-}
-
-.topNavRight .user {
-	margin-left: 40px;
-	display: flex;
-	align-items: center;
-}
-
-.topNavRight .user .userImg {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-
-.topNavRight .user .userLogout {
-	cursor: pointer;
-	margin-left: 3px;
-}
-
-.topNavRight .user .userLogout:hover {
-	color: #a5a5a5;
+	margin: 0 10px;
 }

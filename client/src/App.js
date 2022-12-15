@@ -1,10 +1,10 @@
 import React from 'react'
-import Mainroute from './Mainroute'
+import MainRoute from './MainRoute'
 
 const App = () => {
 	return (
 		<div>
-			<Mainroute />
+			<MainRoute />
 		</div>
 	)
 }

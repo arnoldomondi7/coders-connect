@@ -2,14 +2,12 @@ import React from 'react'
 import Home from './pages/home/Home.page'
 import { Routes, Route } from 'react-router-dom'
 
-const Mainroute = () => {
+const MainRoute = () => {
 	return (
-		<div>
-			<Routes>
-				<Route path='/' element={<Home />} />
-			</Routes>
-		</div>
+		<Routes>
+			<Route path='/' element={<Home />} />
+		</Routes>
 	)
 }
 
-export default Mainroute
+export default MainRoute
