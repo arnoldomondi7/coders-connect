@@ -54,11 +54,11 @@ const Topnav = () => {
 				</div>
 
 				<div className='user'>
-					{/* <img
+					<img
 						src='./assets/user/anodi.jpg'
 						alt='anodi'
 						className='userImage'
-					/> */}
+					/>
 					<span className='userLogout'>Logout</span>
 				</div>
 			</div>

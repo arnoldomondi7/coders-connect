@@ -1,6 +1,8 @@
 .topNav {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	height: 80px;
 }
 
 .topNavLeft,
@@ -46,4 +48,65 @@
 
 .topNavMiddle .topNavLinks ul li {
 	margin: 0 10px;
+}
+
+.topNavMiddle .topNavLinks ul li a {
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: all 0.5s;
+}
+
+.topNavMiddle .topNavLinks ul li a:hover {
+	border-bottom: 2px solid #000;
+}
+
+.topNavMiddle .topNavLinks ul li .active {
+	border-bottom: 2px solid #000;
+}
+
+.topNavRight .topNavNotifications {
+	display: flex;
+}
+
+.topNavRight .topNavNotifications .topNavNotification {
+	margin: 0 15px;
+	position: relative;
+}
+
+.topNavRight .topNavNotifications .topNavNotification .badge {
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	background-color: #ff0000;
+	color: #fff;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
+.topNavRight .user {
+	display: flex;
+	align-items: center;
+	margin-left: 40px;
+}
+
+.topNavRight .user .userImage {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.topNavRight .user .userLogout {
+	cursor: pointer;
+	margin-left: 8px;
+}
+
+.topNavRight .user .userLogout:hover {
+	color: #a5a5a5;
 }
