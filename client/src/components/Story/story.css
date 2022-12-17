@@ -64,6 +64,7 @@
 .storyGroups .storyGroup .storyCard {
 	height: 100%;
 }
+
 .storyGroups .storyGroup .storyCard .hidden {
 	display: none;
 }
@@ -83,7 +84,7 @@
 
 .storyGroups .storyGroup .storyCard label .storyBody .storyBodyImg {
 	width: 100%;
-	height: 210px;
+	height: 100%;
 	object-fit: cover;
 	border-radius: 20px 20px 0 0;
 }
@@ -98,7 +99,7 @@
 
 .storyGroups .storyGroup .storyCard label .storyFooter svg {
 	position: absolute;
-	top: -15px;
+	top: -20px;
 	font-size: 30px;
 	background-color: #fff;
 	padding: 5px;
@@ -107,4 +108,42 @@
 
 .storyGroups .storyGroup .storyCard label .storyFooter .storyTitle {
 	margin-top: 15px;
+}
+
+.storyGroups .storyGroup .storyDiv {
+	position: relative;
+	cursor: pointer;
+}
+
+.storyGroups .storyGroup .storyDiv .storyUser .storyUserImage {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 20px;
+	transition: all 0.5s;
+}
+
+.storyGroups .storyGroup .storyDiv .storyUser .storyUserImage:hover {
+	width: 100%;
+	height: 260px;
+	overflow: hidden;
+	object-fit: cover;
+}
+
+.storyGroups .storyGroup .storyDiv .storyUserAddImgDiv .storyUserAddImg {
+	position: absolute;
+	left: 5px;
+	top: 15px;
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid #eee;
+}
+
+.storyGroups .storyGroup .storyDiv .storyUserTitle {
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+	color: #fff;
 }

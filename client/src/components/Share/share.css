@@ -1,0 +1,90 @@
+.share {
+	background-color: #eee;
+	margin: 40px 15px;
+	padding: 30px 15px;
+	border-radius: 20px;
+	width: 700px;
+}
+
+.shareGroups .shareGroup {
+	padding: 10px 0;
+}
+.shareGroups .shareGroup:first-child {
+	display: flex;
+	border-bottom: 3px solid #fff;
+	align-items: center;
+}
+
+.shareGroups .shareGroup .shareGroupLeft img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.shareGroups .shareGroup .shareGroupRight input {
+	width: 620px;
+	border: none;
+	outline: none;
+	height: 40px;
+	margin-left: 10px;
+	padding-left: 10px;
+	border-radius: 10px;
+}
+.shareGroup:last-child {
+	display: flex;
+}
+
+.shareGroups .shareGroup .shareGroupIcons {
+	margin-top: 20px;
+	display: flex;
+	flex: 3;
+}
+
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon {
+	margin-right: 25px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:hover {
+	border-bottom: 1px solid #000;
+}
+
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon svg {
+	margin-right: 5px;
+}
+
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:first-child svg {
+	color: #00ff00;
+}
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:nth-child(2) svg {
+	color: #000;
+}
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:nth-child(3) svg {
+	color: #ff0000;
+}
+.shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:last-child svg {
+	color: rgb(184, 134, 11);
+}
+
+.shareGroup .shareGroupButton {
+	flex: 1;
+	margin-top: 20px;
+}
+
+.shareGroup .shareGroupButton button {
+	display: block;
+	margin: 0 0 0 auto;
+	background-color: #fff;
+	border: none;
+	padding: 5px 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+.shareGroup .shareGroupButton button:hover {
+	background-color: #000;
+	color: #fff;
+}

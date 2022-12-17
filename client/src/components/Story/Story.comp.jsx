@@ -35,10 +35,99 @@ const Story = () => {
 								<input type='file' id='add' className='hidden' />
 							</div>
 						</div>
-						<div className='storyGroup'>to</div>
-						<div className='storyGroup'>be</div>
-						<div className='storyGroup'>added</div>
-						<div className='storyGroup'>here</div>
+						<div className='storyGroup'>
+							<div className='storyDiv'>
+								<div className='storyUserAddImgDiv'>
+									{/* profile of the user */}
+									<img
+										src='./assets/user/anodi.jpg'
+										alt='stryImg'
+										className='storyUserAddImg'
+									/>
+								</div>
+								<div className='storyUser'>
+									{/* actual story is here */}
+									<img
+										src='./assets/story/eva.jpg'
+										alt='carstry'
+										className='storyUserImage'
+									/>
+								</div>
+								<div className='storyUserTitle'>
+									<h5> Your Story</h5>
+								</div>
+							</div>
+						</div>
+						<div className='storyGroup'>
+							<div className='storyDiv'>
+								<div className='storyUserAddImgDiv'>
+									{/* profile of the user */}
+									<img
+										src='./assets/user/anodi.jpg'
+										alt='stryImg'
+										className='storyUserAddImg'
+									/>
+								</div>
+								<div className='storyUser'>
+									{/* actual story is here */}
+									<img
+										src='./assets/story/cardrug.jpg'
+										alt='carstry'
+										className='storyUserImage'
+									/>
+								</div>
+								<div className='storyUserTitle'>
+									<h5> Your Story</h5>
+								</div>
+							</div>
+						</div>
+						<div className='storyGroup'>
+							<div className='storyDiv'>
+								<div className='storyUserAddImgDiv'>
+									{/* profile of the user */}
+									<img
+										src='./assets/user/anodi.jpg'
+										alt='stryImg'
+										className='storyUserAddImg'
+									/>
+								</div>
+								<div className='storyUser'>
+									{/* actual story is here */}
+									<img
+										src='./assets/story/car.jpg'
+										alt='carstry'
+										className='storyUserImage'
+									/>
+								</div>
+								<div className='storyUserTitle'>
+									<h5> Your Story</h5>
+								</div>
+							</div>
+						</div>
+
+						<div className='storyGroup'>
+							<div className='storyDiv'>
+								<div className='storyUserAddImgDiv'>
+									{/* profile of the user */}
+									<img
+										src='./assets/user/anodi.jpg'
+										alt='stryImg'
+										className='storyUserAddImg'
+									/>
+								</div>
+								<div className='storyUser'>
+									{/* actual story is here */}
+									<img
+										src='./assets/story/cardrug.jpg'
+										alt='carstry'
+										className='storyUserImage'
+									/>
+								</div>
+								<div className='storyUserTitle'>
+									<h5> Your Story</h5>
+								</div>
+							</div>
+						</div>
 					</div>
 				</TabPanel>
 				<TabPanel>
