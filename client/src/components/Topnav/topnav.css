@@ -31,17 +31,20 @@
 	background-color: rgba(238, 238, 238);
 	color: #000;
 	height: 30px;
+	font-size: 13px;
 	padding: 0px 10px;
+	font-weight: bold;
 }
 
 .topNavLeft .topSearch svg {
 	position: absolute;
 	right: 10px;
 	top: 25%;
-	color: #a5a5a5;
+	color: #000;
 	cursor: pointer;
 }
 
+/* number 2 */
 .topNavMiddle .topNavLinks ul {
 	display: flex;
 }
@@ -64,6 +67,7 @@
 	border-bottom: 2px solid #000;
 }
 
+/* number three */
 .topNavRight .topNavNotifications {
 	display: flex;
 }

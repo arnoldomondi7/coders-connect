@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+	faArrowDown,
 	faBook,
 	faPhotoFilm,
 	faShop,
@@ -62,8 +63,9 @@ const Sidebar = () => {
 						Memories
 					</Link>
 				</div>
-
+				<hr className='hr' />
 				<div className='sideBarGroup'>
+					<FontAwesomeIcon icon={faArrowDown} />
 					<button>Click For More</button>
 				</div>
 			</div>
