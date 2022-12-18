@@ -1,3 +1,45 @@
 .rightbar {
 	flex: 1;
+	margin-top: 10px;
+}
+
+.online {
+	margin-bottom: 30px;
+}
+
+.onlineGroup {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	padding: 2px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.onlineGroup:hover {
+	background-color: #eee;
+}
+
+.onlineUserImage {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.onlineGroupLeft {
+	position: relative;
+	display: flex;
+}
+
+.onlineBadge {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	bottom: 0px;
+	right: 10px;
+	border-radius: 50%;
+	background-color: #00ff00;
+	border-radius: 2px solid red;
 }
