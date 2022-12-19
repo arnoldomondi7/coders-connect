@@ -2,8 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
 import './post.css'
+import { Users } from '../../data'
 
-const Post = () => {
+const Post = ({ post }) => {
 	return (
 		<div className='post'>
 			<div className='postGroups'>
@@ -12,13 +13,17 @@ const Post = () => {
 					<div className='postCardHeader'>
 						<div className='postCardHeaderLeft'>
 							<img
-								src='./assets/user/anodi.jpg'
+								src={
+									Users.filter(user => user.id === post?.userId)[0].profileImage
+								}
 								alt='anodi'
 								className='postUserImage'
 							/>
 							<div className='postInfo'>
-								<span className='postUserName'>Arnold Omondi</span>
-								<span className='postDate'>2 minutes ago</span>
+								<span className='postUserName'>
+									{Users.filter(user => user.id === post?.userId)[0].username}
+								</span>
+								<span className='postDate'>{post.date}</span>
 							</div>
 						</div>
 						<div className='postCardHeaderRight'>
@@ -28,13 +33,11 @@ const Post = () => {
 
 					{/* card body */}
 					<div className='postCardBody'>
-						<p className='postText'>My City My Town</p>
-						<img
-							src='./assets/posts/model.jpg'
-							className='postImg'
-							alt='asse'
-						/>
+						<p className='postText'>{post?.description}</p>
+						<img src={post?.postImage} className='postImg' alt='' />
 					</div>
+
+					{/* card Footer */}
 					<div className='postCardFooter'>
 						<div className='postCardFooterLeft'>
 							<img
@@ -42,7 +45,7 @@ const Post = () => {
 								alt='assets'
 								className='postIconImg'
 							/>
-							<span className='postCounter'>3 likes</span>
+							<span className='postCounter'>{post.likes} Likes</span>
 						</div>
 						<div className='postCardFooterRight'>
 							<img
@@ -50,7 +53,7 @@ const Post = () => {
 								alt='assets'
 								className='postIconImg'
 							/>
-							<span className='postCounter'>32 comments</span>
+							<span className='postCounter'>{post.comments} comments</span>
 						</div>
 					</div>
 				</div>

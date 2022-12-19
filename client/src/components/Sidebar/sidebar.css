@@ -1,5 +1,12 @@
 .sidebar {
 	flex: 1;
+	position: sticky;
+	top: 0;
+	overflow-y: scroll;
+	height: calc(100vh -80px);
+}
+.sidebar::-webkit-scrollbar {
+	display: none;
 }
 
 .sidebar .sideBarGroups .sideBarGroup {

@@ -12,14 +12,17 @@ const Share = () => {
 	return (
 		<div className='share'>
 			<div className='shareGroups'>
+				{/* number 1 */}
 				<div className='shareGroup'>
 					<div className='shareGroupLeft'>
 						<img src='./assets/user/anodi.jpg' alt='anodi' />
 					</div>
 					<div className='shareGroupRight'>
-						<input type='text' placeholder='What Are Your Thoughts Today?' />
+						<input type='text' placeholder="What's Happening ?" />
 					</div>
 				</div>
+
+				{/* number 2 */}
 				<div className='shareGroup'>
 					<div className='shareGroupIcons'>
 						<div className='shareGroupIcon'>

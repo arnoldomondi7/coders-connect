@@ -1,4 +1,9 @@
 .newsfeed {
-	flex: 2;
+	flex: 3;
 	background-color: #fff;
+	height: calc(100vh - 80px);
+	overflow-y: scroll;
+}
+.newsfeed::-webkit-scrollbar {
+	display: none;
 }

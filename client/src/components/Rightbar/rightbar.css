@@ -1,6 +1,7 @@
 .rightbar {
 	flex: 1;
 	margin-top: 10px;
+	height: calc(100vh - 80px);
 }
 
 .online {
@@ -8,12 +9,15 @@
 }
 
 .onlineGroup {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	display: flex;
 	align-items: center;
-	padding: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding: 5px;
 	cursor: pointer;
 	transition: all 0.5s;
+	border-radius: 20px;
 }
 
 .onlineGroup:hover {

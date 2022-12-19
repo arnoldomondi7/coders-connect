@@ -11,7 +11,7 @@
 }
 .shareGroups .shareGroup:first-child {
 	display: flex;
-	border-bottom: 3px solid #fff;
+	border-bottom: 2px solid #fff;
 	align-items: center;
 }
 
@@ -26,9 +26,9 @@
 	width: 620px;
 	border: none;
 	outline: none;
-	height: 40px;
+	height: 45px;
 	margin-left: 10px;
-	padding-left: 10px;
+	padding-left: 20px;
 	border-radius: 10px;
 }
 .shareGroup:last-child {

@@ -1,94 +1,16 @@
 import React from 'react'
+import Onlinefriends from '../onlineFriends/Onlinefriends.comp'
 import './rightbar.css'
+import { Users } from '../../data'
 
 const Rightbar = () => {
 	return (
 		<div className='rightbar'>
 			<h4 className='online'>Online Friends</h4>
 			<div className='onlineGroups'>
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
-
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
-
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
-
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
-
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
-
-				<div className='onlineGroup'>
-					<div className='onlineGroupLeft'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='onlineUserImage'
-						/>
-						<div className='onlineBadge'></div>
-					</div>
-					<div className='onlineGroupRight'>
-						<span className='onlineUserName'>Arnold Omondi</span>
-					</div>
-				</div>
+				{Users.map((user, i) => (
+					<Onlinefriends user={user} key={i} />
+				))}
 			</div>
 		</div>
 	)

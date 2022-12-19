@@ -1,4 +1,5 @@
 import React from 'react'
+import { Posts } from '../../data'
 import Post from '../Post/Post.comp'
 import Share from '../Share/Share.comp'
 import Story from '../Story/Story.comp'
@@ -9,7 +10,9 @@ const Newsfeed = () => {
 		<div className='newsfeed'>
 			<Story />
 			<Share />
-			<Post />
+			{Posts.map((post, i) => {
+				return <Post post={post} key={i} />
+			})}
 		</div>
 	)
 }
