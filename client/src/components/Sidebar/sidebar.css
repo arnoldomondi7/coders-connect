@@ -5,6 +5,7 @@
 	overflow-y: scroll;
 	height: calc(100vh -80px);
 }
+
 .sidebar::-webkit-scrollbar {
 	display: none;
 }
@@ -35,6 +36,7 @@
 	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
+	margin-right: 10px;
 }
 
 .sidebar .sideBarGroups .sideBarGroup svg {
@@ -54,4 +56,9 @@
 	transition: all 0.5s;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+.sidebar .sideBarGroups .sideBarGroup button:hover {
+	color: #fff;
+	background-color: #000;
 }

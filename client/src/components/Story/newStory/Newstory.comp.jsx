@@ -20,10 +20,7 @@ const Newstory = ({ story }) => {
 					<img src={story.storyImage} alt='' className='storyUserImage' />
 				</div>
 				<div className='storyUserTitle'>
-					<h5>
-						{' '}
-						{Users.filter(user => user.id === story?.userId)[0].username}
-					</h5>
+					<h5>{Users.filter(user => user.id === story?.userId)[0].username}</h5>
 				</div>
 			</div>
 		</div>

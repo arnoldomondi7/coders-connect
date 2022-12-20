@@ -43,10 +43,10 @@
 
 /* Width */
 .storyGroups::-webkit-scrollbar {
-	height: 5px;
+	height: 6px;
 }
 
-/* track */
+/* track  aka background */
 .storyGroups::-webkit-scrollbar-track {
 	background: #fff;
 }

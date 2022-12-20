@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
 import './post.css'
 import { Users } from '../../data'
 
 const Post = ({ post }) => {
+	const [like, setLike] = useState(post.likes)
+	const [isLiked, setisLiked] = useState(false)
+
+	//handle the likes.
+	const likeHandler = () => {
+		setLike(isLiked ? like - 1 : like + 1)
+		//will toggle
+		//if true get it to false, if false get it to true
+		setisLiked(!isLiked)
+	}
 	return (
 		<div className='post'>
 			<div className='postGroups'>
@@ -40,12 +50,23 @@ const Post = ({ post }) => {
 					{/* card Footer */}
 					<div className='postCardFooter'>
 						<div className='postCardFooterLeft'>
-							<img
-								src='./assets/icons/heartwhite.png'
-								alt='assets'
-								className='postIconImg'
-							/>
-							<span className='postCounter'>{post.likes} Likes</span>
+							{isLiked ? (
+								<img
+									src='./assets/icons/heartred.png'
+									alt='assets'
+									className='postIconImg'
+									onClick={likeHandler}
+								/>
+							) : (
+								<img
+									src='./assets/icons/heartwhite.png'
+									alt='assets'
+									className='postIconImg'
+									onClick={likeHandler}
+								/>
+							)}
+
+							<span className='postCounter'>{like} Likes</span>
 						</div>
 						<div className='postCardFooterRight'>
 							<img

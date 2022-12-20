@@ -36,8 +36,8 @@
 }
 
 .shareGroups .shareGroup .shareGroupIcons {
-	margin-top: 20px;
 	display: flex;
+	margin-top: 20px;
 	flex: 3;
 }
 
@@ -47,7 +47,7 @@
 	transition: all 0.5s;
 }
 .shareGroups .shareGroup .shareGroupIcons .shareGroupIcon:hover {
-	border-bottom: 1px solid #000;
+	border-bottom: 2px solid #000;
 }
 
 .shareGroups .shareGroup .shareGroupIcons .shareGroupIcon svg {

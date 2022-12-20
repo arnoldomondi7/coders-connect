@@ -6,14 +6,18 @@ import {
 	faPerson,
 	faSearch,
 } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './Topnav.css'
 
 const Topnav = () => {
 	return (
 		<div className='topNav'>
+			{/* step1 */}
 			<div className='topNavLeft'>
-				<h2 className='logo'>Coders-Connect</h2>
+				<Link to='/' activeclassname='active'>
+					<h2 className='logo'>Coders-Connect</h2>
+				</Link>
+
 				<div className='topSearch'>
 					<input type='text' placeholder='Search Anything...' />
 					<FontAwesomeIcon icon={faSearch} />
@@ -54,11 +58,13 @@ const Topnav = () => {
 				</div>
 
 				<div className='user'>
-					<img
-						src='./assets/user/anodi.jpg'
-						alt='anodi'
-						className='userImage'
-					/>
+					<Link to='/account'>
+						<img
+							src='./assets/user/anodi.jpg'
+							alt='anodi'
+							className='userImage'
+						/>
+					</Link>
 					<span className='userLogout'>Logout</span>
 				</div>
 			</div>

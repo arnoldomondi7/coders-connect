@@ -16,6 +16,7 @@ const Sidebar = () => {
 	return (
 		<div className='sidebar'>
 			<div className='sideBarGroups'>
+				{/* one */}
 				<div className='sideBarGroup'>
 					<Link to='/account' className='sideBarLink'>
 						<img

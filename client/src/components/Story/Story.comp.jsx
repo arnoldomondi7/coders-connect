@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd } from '@fortawesome/free-solid-svg-icons'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import './story.css'
 import { Stories } from '../../data'
 import Newstory from './newStory/Newstory.comp'
+import './story.css'
 
-const Story = ({ story }) => {
+const Story = () => {
 	return (
 		<div className='story'>
 			<Tabs>
@@ -18,6 +18,7 @@ const Story = ({ story }) => {
 				</TabList>
 
 				<TabPanel>
+					{/* one */}
 					<div className='storyGroups'>
 						<div className='storyGroup'>
 							<div className='storyCard'>
@@ -38,6 +39,7 @@ const Story = ({ story }) => {
 							</div>
 						</div>
 
+						{/* number 2 */}
 						{Stories.map((story, i) => (
 							<Newstory story={story} key={i} />
 						))}
