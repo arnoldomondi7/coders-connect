@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react'
 import { Users } from '../../data'
-import './post.css'
 
-const Post = ({ post }) => {
+const OSingleAccountPost = ({ post }) => {
 	const [like, setLike] = useState(post.likes)
 	const [isLiked, setisLiked] = useState(false)
 
@@ -16,65 +15,65 @@ const Post = ({ post }) => {
 		setisLiked(!isLiked)
 	}
 	return (
-		<div className='post'>
-			<div className='postGroups'>
-				<div className='postGroup'>
+		<div className='nsap'>
+			<div className='nsapGroups'>
+				<div className='nsapGroup'>
 					{/* card header */}
-					<div className='postCardHeader'>
-						<div className='postCardHeaderLeft'>
+					<div className='nsapCardHeader'>
+						<div className='nsapCardHeaderLeft'>
 							<img
 								src={
 									Users.filter(user => user.id === post?.userId)[0].profileImage
 								}
 								alt='anodi'
-								className='postUserImage'
+								className='nsapUserImage'
 							/>
-							<div className='postInfo'>
-								<span className='postUserName'>
+							<div className='nsapInfo'>
+								<span className='nsapUserName'>
 									{Users.filter(user => user.id === post?.userId)[0].username}
 								</span>
-								<span className='postDate'>{post.date}</span>
+								<span className='nsapDate'>{post.date}</span>
 							</div>
 						</div>
-						<div className='postCardHeaderRight'>
+						<div className='nsapCardHeaderRight'>
 							<FontAwesomeIcon icon={faEllipsis} />
 						</div>
 					</div>
 
 					{/* card body */}
-					<div className='postCardBody'>
-						<p className='postText'>{post?.description}</p>
-						<img src={post?.postImage} className='postImg' alt='' />
+					<div className='nsapCardBody'>
+						<p className='nsapText'>{post?.description}</p>
+						<img src={post?.postImage} className='nsapImg' alt='' />
 					</div>
 
 					{/* card Footer */}
-					<div className='postCardFooter'>
-						<div className='postCardFooterLeft'>
+					<div className='nsapCardFooter'>
+						<div className='nsapCardFooterLeft'>
 							{isLiked ? (
 								<img
 									src='./assets/icons/heartred.png'
 									alt='assets'
-									className='postIconImg'
+									className='nsapIconImg'
 									onClick={likeHandler}
 								/>
 							) : (
 								<img
 									src='./assets/icons/heartwhite.png'
 									alt='assets'
-									className='postIconImg'
+									className='nsapIconImg'
 									onClick={likeHandler}
 								/>
 							)}
 
-							<span className='postCounter'>{like} Likes</span>
+							<span className='nsapCounter'>{like} Likes</span>
 						</div>
-						<div className='postCardFooterRight'>
+						<div className='nsapCardFooterRight'>
 							<img
 								src='./assets/icons/comment.png'
 								alt='assets'
-								className='postIconImg'
+								className='nsapIconImg'
 							/>
-							<span className='postCounter'>{post.comments} comments</span>
+							<span className='nsapCounter'>{post.comments} comments</span>
 						</div>
 					</div>
 				</div>
@@ -83,4 +82,4 @@ const Post = ({ post }) => {
 	)
 }
 
-export default Post
+export default OSingleAccountPost

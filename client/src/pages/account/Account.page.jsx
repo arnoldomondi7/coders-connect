@@ -9,11 +9,16 @@ import './account.css'
 const Account = () => {
 	return (
 		<>
+			{/* step1 */}
 			<Topnav />
 			<div className='mainContainer d-flex'>
+				{/* step2 */}
 				<Cover />
+				{/* step3 */}
 				<div className='nADiv'>
+					{/* step4 */}
 					<NewAccountPost />
+					{/* step 5 */}
 					<Rightbar />
 				</div>
 			</div>

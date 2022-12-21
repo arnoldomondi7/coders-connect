@@ -20,6 +20,7 @@
 	border-radius: 20px;
 }
 
+/* step 2 */
 .accountInfo {
 	position: relative;
 }
@@ -27,13 +28,14 @@
 .accountInfoLeft img {
 	position: absolute;
 	top: 285px;
-	left: 40px;
+	left: 45px;
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
 	object-fit: cover;
 }
 
+/* step 3 */
 .accountInfoRight {
 	position: absolute;
 	top: 350px;
@@ -42,6 +44,11 @@
 
 .userName {
 	margin-bottom: 10px;
+}
+
+.userFriends {
+	font-weight: 400;
+	letter-spacing: 1.3px;
 }
 
 .friends {
@@ -58,7 +65,7 @@
 }
 
 .dots {
-	font-size: 30px;
+	font-size: 33px;
 }
 
 .mainContainer.d-flex {
@@ -67,11 +74,24 @@
 
 .nADiv {
 	display: flex;
-	margin-top: 550px;
+	margin-top: 500px;
 }
 
 .nAPost {
 	flex: 4;
-	background-color: #eee;
 	margin-right: 10px;
+	border-radius: 20px;
+}
+
+.nAShareDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 20px;
+	height: calc(100vh - 80px);
+	overflow-y: scroll;
+}
+
+.nAShareDiv::-webkit-scrollbar {
+	display: none;
 }

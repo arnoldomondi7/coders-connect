@@ -1,0 +1,91 @@
+.nsap {
+	background-color: #eee;
+	margin: 10px 15px;
+	padding: 10px 15px;
+	border-radius: 20px;
+	width: 700px;
+}
+.nsapGroups .nsapGroup .nsapCardHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nsapGroups .nsapGroup .nsapCardHeader .nsapCardHeaderLeft {
+	display: flex;
+	align-items: center;
+}
+
+.nsapGroups .nsapGroup .nsapCardHeader .nsapCardHeaderLeft .nsapUserImage {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 5px;
+}
+
+.nsapGroups .nsapGroup .nsapCardHeader .nsapCardHeaderLeft .nsapInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.nsapGroups
+	.nsapGroup
+	.nsapCardHeader
+	.nsapCardHeaderLeft
+	.nsapInfo
+	.nsapUserName {
+	font-weight: bold;
+}
+
+.nsapGroups .nsapGroup .nsapCardHeader .nsapCardHeaderLeft .nsapInfo .nsapDate {
+	font-size: 12px;
+}
+
+.nsapGroups .nsapGroup .nsapCardHeader .nsapCardHeaderRight svg {
+	cursor: pointer;
+	font-size: 20px;
+}
+
+/* card body */
+.nsapGroups .nsapGroup .nsapCardBody {
+	padding: 10px;
+}
+
+.nsapGroups .nsapGroup .nsapCardBody .nsapText {
+	margin-bottom: 7px;
+}
+
+.nsapGroups .nsapGroup .nsapCardBody .nsapImg {
+	width: 100%;
+	max-height: 500px;
+}
+
+/* card footer */
+.nsapGroups .nsapGroup .nsapCardFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nsapGroups .nsapGroup .nsapCardFooter .nsapCardFooterLeft {
+	display: flex;
+	align-items: center;
+}
+
+.nsapGroups .nsapGroup .nsapCardFooter .nsapCardFooterRight {
+	display: flex;
+	align-items: center;
+}
+
+.nsapIconImg {
+	width: 25px;
+	height: auto;
+	cursor: pointer;
+	margin-right: 7px;
+}
+
+.nsapCounter {
+	font-weight: bold;
+	font-size: 15px;
+}

@@ -1,15 +1,14 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faBell,
 	faMessage,
 	faPerson,
 	faSearch,
 } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import './Topnav.css'
 
-const Topnav = () => {
+const SingeUserTop = () => {
 	return (
 		<div className='topNav'>
 			{/* step1 */}
@@ -64,7 +63,7 @@ const Topnav = () => {
 				<div className='user'>
 					<Link to='/account'>
 						<img
-							src='./assets/user/anodi.jpg'
+							src='../assets/user/anodi.jpg'
 							alt='anodi'
 							className='userImage'
 						/>
@@ -76,4 +75,4 @@ const Topnav = () => {
 	)
 }
 
-export default Topnav
+export default SingeUserTop
