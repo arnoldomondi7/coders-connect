@@ -15,7 +15,7 @@ const Share = () => {
 				{/* number 1 */}
 				<div className='shareGroup'>
 					<div className='shareGroupLeft'>
-						<img src='./assets/user/anodi.jpg' alt='anodi' />
+						<img src='../assets/user/anodi.jpg' alt='anodi' />
 					</div>
 					<div className='shareGroupRight'>
 						<input type='text' placeholder="What's Happening ?" />

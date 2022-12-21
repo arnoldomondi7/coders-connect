@@ -3,6 +3,7 @@ import { Posts } from '../../data'
 import NewSingAccPost from '../NewSingAccPost/NewSingAccPost.comp'
 import Share from '../Share/Share.comp'
 
+//this referes to a single user.
 const NewAccountPost = () => {
 	return (
 		<div className='nAPost'>

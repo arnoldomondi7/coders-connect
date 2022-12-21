@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// components that has the user details
 const AddNewFriends = ({ user }) => {
 	return (
 		<Link to='/user/112233'>
