@@ -3,42 +3,98 @@ import bcrypt from 'bcryptjs'
 
 //register the user.
 export const register = async (req, res) => {
-	const newUser = new User({
-		username: req.body.username,
-		userauth: req.body.userauth,
-		password: bcrypt.hashSync(req.body.password),
+	//get data from the frontend.
+	const { username, userauth, password, imageCover } = req.body
+
+	//handle the validation.
+	if (!username) {
+		return res.json({
+			error: 'Name Is Required',
+		})
+	}
+
+	if (!password || password.length < 8) {
+		return res.json({
+			error: 'Password Should Be At least 8 Characters',
+		})
+	}
+
+	//ensure that the email does not exist.
+	const exist = await User.findOne({ userauth })
+
+	//logic to log an error if the email already exists.
+	if (exist) {
+		return res.json({
+			error: 'Email Is Already In Use, Pick A New Email',
+		})
+	}
+
+	//hash the password.
+	const hashedPassword = bcrypt.hashSync(password)
+
+	//if not, create a new user.
+	const user = new User({
+		username,
+		userauth,
+		password: hashedPassword,
+		imageProfile: req.body.imageProfile || './assets/user/defaultdp.png',
+		imageCover: req.body.imageCover || './assets/user/defaultdp.png',
 	})
 
-	//save the data.
-	const user = await newUser.save()
+	//save the user.
+	try {
+		await user.save()
 
-	//send the data to the front end.
-	res.status(201).send({
-		_id: user._id,
-		username: user.username,
-		userauth: user.userauth,
-	})
+		//send the data to the front end.
+		res.status(201).send({
+			_id: user._id,
+			username: user.username,
+			userauth: user.userauth,
+		})
+	} catch (error) {
+		return res.json({
+			error: 'Unable To Sign In The User.',
+		})
+	}
 }
 
 //login the user.
 export const login = async (req, res) => {
-	//find if the email already exists.
-	const user = await User.findOne({ userauth: req.body.userauth })
+	//destructure the details from the frontend
+	const { userauth, password } = req.body
 
-	//handle the error if the user does not exists.
-	if (user) {
-		//hash the password.
-		if (bcrypt.compareSync(req.body.password, user.password)) {
-			//give access
-			res.status(200).send({
-				_id: user._id,
-				username: user.username,
-				userauth: user.userauth,
+	try {
+		//check to ensure that the email exists.
+		const user = await User.findOne({ userauth })
+
+		//handle the error to ensure that the email exists.
+		if (!user) {
+			return res.json({
+				error: 'User Does Not Exist, Please Sign Up',
 			})
 		}
-	} else {
-		res.status(400).send({
-			error: 'Unable to Login',
+
+		//if email is ok, then compare the password.
+		//compare the password, with that saved in the db.
+		const match = bcrypt.compareSync(password, user.password)
+
+		//handle the error.
+		//ensure that indeed the passwords match.
+		if (!match) {
+			return res.json({
+				error: 'Invalid Password, Please Try Again',
+			})
+		}
+
+		//send the id,email, name,token,
+		return res.json({
+			_id: user._id,
+			username: user.username,
+			userauth: user.userauth,
+		})
+	} catch (error) {
+		return res.json({
+			error: 'Unable To Sign In, Please Try Again.',
 		})
 	}
 }

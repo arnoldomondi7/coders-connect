@@ -1,7 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import './register.css'
+import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Register = () => {
+	//handle the naviaget
+	const navigate = useNavigate()
+
+	//handle the state.
+	const [username, setUsername] = useState('')
+	const [userauth, setUserauth] = useState('')
+	const [password, setPassword] = useState('')
+	const [retypePassword, setRetypePassword] = useState('')
+
+	//code to handle for registration.
+	const handleRegister = async event => {
+		event.preventDefault()
+
+		//handle error if the password is not the same.
+		if (password !== retypePassword) {
+			return toast.error('Passwords Do Not Match, Please try Again')
+		}
+
+		try {
+			const { data } = await axios.post(
+				`${process.env.REACT_APP_API}/register`,
+				{
+					username,
+					userauth,
+					password,
+				}
+			)
+
+			//handle the error.
+			if (data.error) {
+				return toast.error(data.error)
+			}
+
+			//log a success message.
+			toast.success(`${username}, was Successfully Registered`)
+
+			navigate('/login')
+		} catch (error) {
+			toast.error('Error, ')
+		}
+	}
+
+	//ensure once logged in this page cant be accessed.
+	useEffect(() => {
+		if (window.localStorage.getItem('userInfo')) {
+			navigate('/')
+		}
+	}, [navigate])
 	return (
 		<div className='form'>
 			<div className='formGroups'>
@@ -12,19 +64,39 @@ const Register = () => {
 					<h1 className='formTitle'>Coders-Connect</h1>
 				</div>
 				<div className='formRight'>
-					<form>
+					<form onSubmit={handleRegister}>
 						<div className='formGroup'>
-							<input type='email' placeholder='Username' />
+							<input
+								onChange={event => setUsername(event.target.value)}
+								type='text'
+								required
+								placeholder='Username'
+							/>
 						</div>
 						<div className='formGroup'>
-							<input type='email' placeholder='Email or Phone number' />
+							<input
+								onChange={event => setUserauth(event.target.value)}
+								type='email'
+								required
+								placeholder='Email or Phone number'
+							/>
 						</div>
 						<div className='formGroup'>
-							<input type='password' placeholder='password' />
+							<input
+								onChange={event => setPassword(event.target.value)}
+								type='password'
+								required
+								placeholder='Enter Password'
+							/>
 						</div>
 
 						<div className='formGroup'>
-							<input type='password' placeholder='re-type password' />
+							<input
+								onChange={event => setRetypePassword(event.target.value)}
+								type='password'
+								required
+								placeholder='Re-Type Password'
+							/>
 						</div>
 
 						<div className='formGroup form-btnLogin'>
@@ -32,7 +104,9 @@ const Register = () => {
 						</div>
 
 						<div className='formGroup form-btnRegister'>
-							<button>Login</button>
+							<Link to='/login'>
+								<button>Login</button>
+							</Link>
 						</div>
 					</form>
 				</div>

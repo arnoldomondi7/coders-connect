@@ -121,3 +121,13 @@
 .topNavRight .user .userLogout:hover {
 	color: #a5a5a5;
 }
+
+.auth {
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: all 0.5s;
+}
+
+.auth:hover {
+	border-bottom: 2px solid #000;
+}

@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { readdirSync } from 'fs'
 
 const app = express()
@@ -8,6 +9,7 @@ const app = express()
 //its used to convert the json object to json data.
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 //handle the express routes.
 readdirSync('./routes').map(route =>

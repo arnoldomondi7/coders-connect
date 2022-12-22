@@ -14,6 +14,10 @@ import { Link } from 'react-router-dom'
 import './sidebar.css'
 
 const Sidebar = () => {
+	//get the data in the localstorage.
+	const userInfo = window.localStorage.getItem('userInfo')
+		? JSON.parse(window.localStorage.getItem('userInfo'))
+		: null
 	return (
 		<div className='sidebar'>
 			<div className='sideBarGroups'>
@@ -25,7 +29,7 @@ const Sidebar = () => {
 							alt='anodi'
 							className='currentUserImg'
 						/>
-						<span className='currentUserName'>Arnold Omondi</span>
+						<span className='currentUserName'>{userInfo.username}</span>
 					</Link>
 				</div>
 				{/* two */}

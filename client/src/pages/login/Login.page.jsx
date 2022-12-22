@@ -1,7 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 import './login.css'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
+	//handle the naviaget
+	const navigate = useNavigate()
+
+	//handle the state.
+	const [userauth, setUserauth] = useState('')
+	const [password, setPassword] = useState('')
+
+	//code to handle for registration.
+	const handleLogin = async event => {
+		event.preventDefault()
+		try {
+			const { data } = await axios.post(`${process.env.REACT_APP_API}/login`, {
+				userauth,
+				password,
+			})
+
+			if (data.error) {
+				return toast.error(data.error)
+			}
+			//store the userinfo in the local storage.
+			//data from backend should be converted to javascript objects
+			//thus use, JSON.stringify(data)
+			window.localStorage.setItem('userInfo', JSON.stringify(data))
+
+			//log a success message.
+			toast.success('Successfully Signed In')
+
+			//re-direct to the homepage.
+			navigate('/')
+		} catch (error) {
+			toast.error(error.message)
+		}
+	}
+
+	//ensure once logged in this page cant be accessed.
+	useEffect(() => {
+		if (window.localStorage.getItem('userInfo')) {
+			navigate('/')
+		}
+	}, [navigate])
 	return (
 		<div className='form'>
 			<div className='formGroups'>
@@ -12,12 +56,22 @@ const Login = () => {
 					<h1 className='formTitle'>Coders-Connect</h1>
 				</div>
 				<div className='formRight'>
-					<form>
+					<form onSubmit={handleLogin}>
 						<div className='formGroup'>
-							<input type='email' placeholder='Email or Phone number' />
+							<input
+								required
+								onChange={event => setUserauth(event.target.value)}
+								type='email'
+								placeholder='Email or Phone number'
+							/>
 						</div>
 						<div className='formGroup'>
-							<input type='password' placeholder='password' />
+							<input
+								required
+								onChange={event => setPassword(event.target.value)}
+								type='password'
+								placeholder='password'
+							/>
 						</div>
 
 						<div className='formGroup form-btnLogin'>
@@ -25,7 +79,9 @@ const Login = () => {
 						</div>
 
 						<div className='formGroup form-btnRegister'>
-							<button>Create A New Account</button>
+							<Link to='/register'>
+								<button>Create A New Account</button>
+							</Link>
 						</div>
 					</form>
 				</div>

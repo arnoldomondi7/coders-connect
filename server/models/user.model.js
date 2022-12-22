@@ -19,6 +19,14 @@ const userSchema = new Schema(
 			required: true,
 			minlength: 8,
 		},
+		imageProfile: {
+			type: String,
+			required: true,
+		},
+		imageCover: {
+			type: String,
+			required: true,
+		},
 	},
 	{ timestamps: true }
 )
