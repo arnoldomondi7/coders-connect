@@ -38,7 +38,7 @@ export const register = async (req, res) => {
 		userauth,
 		password: hashedPassword,
 		imageProfile: req.body.imageProfile || './assets/user/defaultdp.png',
-		imageCover: req.body.imageCover || './assets/user/defaultdp.png',
+		imageCover: req.body.imageCover || './assets/account/evening.jpg',
 	})
 
 	//save the user.
@@ -50,6 +50,10 @@ export const register = async (req, res) => {
 			_id: user._id,
 			username: user.username,
 			userauth: user.userauth,
+			imageProfile: user.imageProfile,
+			imageCover: user.imageCover,
+			followings: user.followings,
+			followers: user.followers,
 		})
 	} catch (error) {
 		return res.json({
@@ -87,10 +91,14 @@ export const login = async (req, res) => {
 		}
 
 		//send the id,email, name,token,
-		return res.json({
+		return res.send({
 			_id: user._id,
 			username: user.username,
 			userauth: user.userauth,
+			imageProfile: user.imageProfile,
+			imageCover: user.imageCover,
+			followings: user.followings,
+			followers: user.followers,
 		})
 	} catch (error) {
 		return res.json({

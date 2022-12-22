@@ -22,16 +22,18 @@ const Sidebar = () => {
 		<div className='sidebar'>
 			<div className='sideBarGroups'>
 				{/* one */}
-				<div className='sideBarGroup'>
-					<Link to='/account' className='sideBarLink'>
-						<img
-							src='./assets/user/anodi.jpg'
-							alt='anodi'
-							className='currentUserImg'
-						/>
-						<span className='currentUserName'>{userInfo.username}</span>
-					</Link>
-				</div>
+				{userInfo && (
+					<div className='sideBarGroup'>
+						<Link to='/account' className='sideBarLink'>
+							<img
+								src={userInfo.imageProfile}
+								alt='anodi'
+								className='currentUserImg'
+							/>
+							<span className='currentUserName'>{userInfo.username}</span>
+						</Link>
+					</div>
+				)}
 				{/* two */}
 				<div className='sideBarGroup'>
 					<FontAwesomeIcon icon={faUsers} />

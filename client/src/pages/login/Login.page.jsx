@@ -62,7 +62,7 @@ const Login = () => {
 								required
 								onChange={event => setUserauth(event.target.value)}
 								type='email'
-								placeholder='Email or Phone number'
+								placeholder='Enter Email'
 							/>
 						</div>
 						<div className='formGroup'>

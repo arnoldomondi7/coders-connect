@@ -78,7 +78,7 @@ const Register = () => {
 								onChange={event => setUserauth(event.target.value)}
 								type='email'
 								required
-								placeholder='Email or Phone number'
+								placeholder='Enter Email'
 							/>
 						</div>
 						<div className='formGroup'>

@@ -50,11 +50,13 @@ const Topnav = () => {
 								Home
 							</NavLink>
 						</li>
-						<li>
-							<NavLink to='/friends' activeclassname='active'>
-								Friends
-							</NavLink>
-						</li>
+						{userInfo && (
+							<li>
+								<NavLink to='/friends' activeclassname='active'>
+									Friends
+								</NavLink>
+							</li>
+						)}
 					</ul>
 				</div>
 			</div>
@@ -87,7 +89,7 @@ const Topnav = () => {
 						<>
 							<Link to='/account'>
 								<img
-									src='./assets/user/anodi.jpg'
+									src={userInfo.imageProfile}
 									alt='anodi'
 									className='userImage'
 								/>
@@ -97,11 +99,9 @@ const Topnav = () => {
 							</span>
 						</>
 					) : (
-						<>
-							<NavLink to='/login' activeclassname='active' className='auth'>
-								Login
-							</NavLink>
-						</>
+						<NavLink to='/login' activeclassname='active' className='auth'>
+							Login
+						</NavLink>
 					)}
 				</div>
 			</div>

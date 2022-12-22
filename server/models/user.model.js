@@ -27,6 +27,14 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		followings: {
+			type: Array,
+			default: [],
+		},
+		followers: {
+			type: Array,
+			default: [],
+		},
 	},
 	{ timestamps: true }
 )
