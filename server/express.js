@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+const morgan = require('morgan')
 import { readdirSync } from 'fs'
 
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+app.use(morgan('dev'))
 
 //handle the express routes.
 readdirSync('./routes').map(route =>

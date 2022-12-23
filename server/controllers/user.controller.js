@@ -106,3 +106,24 @@ export const login = async (req, res) => {
 		})
 	}
 }
+
+//get a single user.
+
+export const getSingleUser = async (req, res) => {
+	try {
+		const user = await User.findById(req.params.id)
+
+		//handle the logic.
+		if (user) {
+			//send res to the frontend.
+			return res.send(user)
+		}
+
+		//log an error message/
+		res.status(400).send({ message: 'User was Not Found' })
+	} catch (error) {
+		return res.json({
+			error: 'Unable To Get A User, Please Try Again.',
+		})
+	}
+}

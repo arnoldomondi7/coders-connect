@@ -10,7 +10,7 @@ export const Users = [
 	{
 		id: 2,
 		profileImage: './assets/user/girlmod1.jpg',
-		username: 'Jewells Ortega',
+		username: 'Jane Doe',
 	},
 	{
 		id: 3,
