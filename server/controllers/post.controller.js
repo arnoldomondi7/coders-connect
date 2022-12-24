@@ -73,3 +73,23 @@ export const currentUserPost = async (req, res) => {
 		})
 	}
 }
+
+//handle the likes.
+export const handleLike = async (req, res) => {
+	try {
+		const post = await Post.findById(req.params.id)
+
+		if (!post.likes.includes(req.body.userId)) {
+			await post.updateOne({ $push: { likes: req.body.userId } })
+			res.status(200).send('Post Liked')
+		} else {
+			await post.updateOne({ $pull: { likes: req.body.userId } })
+			res.status(200).send('Post Unliked')
+		}
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({
+			error: 'Unable to Like User Posts',
+		})
+	}
+}

@@ -8,6 +8,7 @@ import {
 	currentUserPost,
 	getAccountPost,
 	getPost,
+	handleLike,
 } from '../controllers/post.controller'
 
 //register the user.
@@ -21,6 +22,9 @@ router.get('/all/:userId', getAccountPost)
 
 //get currentUser post.
 router.get('/account/:username', currentUserPost)
+
+//like/dislike a post.
+router.put('/like/:id', handleLike)
 
 //export the router
 module.exports = router

@@ -27,7 +27,13 @@ const SingleRightBar = () => {
 
 	return (
 		<div className='rightbar'>
-			<h4 className='online'>Online Friends</h4>
+			<h4 className='online'>
+				{userInfo.followings.length === 0 ? (
+					<h4>No Online Friends</h4>
+				) : (
+					<h4>Online Friends</h4>
+				)}
+			</h4>
 			<div className='onlineGroups'>
 				{userInfo.followings.length === 0 ? (
 					<span> Follow Friends To See Them</span>

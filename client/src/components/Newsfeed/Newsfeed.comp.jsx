@@ -23,13 +23,16 @@ const Newsfeed = () => {
 			)
 
 			//update the state.
-			setPosts(resultPost.data)
-			console.log('Posts==>', resultPost.data)
+			setPosts(
+				resultPost.data.sort((a, b) => {
+					return new Date(b.createdAt) - new Date(a.createdAt)
+				})
+			)
 		}
 
 		//call the function.
 		fetchPosts()
-	}, [userInfo])
+	}, [userInfo._id])
 
 	return (
 		<div className='newsfeed'>

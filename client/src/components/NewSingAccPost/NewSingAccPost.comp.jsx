@@ -63,7 +63,11 @@ const NewSingAccPost = ({ post }) => {
 					{/* card body */}
 					<div className='nsapCardBody'>
 						<p className='nsapText'>{post?.description}</p>
-						<img src={`../${post?.postImage}`} className='nsapImg' alt='' />
+						<img
+							src={`./assets/uploads/${post?.image}`}
+							className='nsapImg'
+							alt=''
+						/>
 					</div>
 
 					{/* card Footer */}

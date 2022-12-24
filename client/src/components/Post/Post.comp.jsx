@@ -18,8 +18,18 @@ const Post = ({ post }) => {
 		? JSON.parse(window.localStorage.getItem('userInfo'))
 		: null
 
+	useEffect(() => {
+		setisLiked(post.likes.includes(userInfo._id))
+	}, [post.likes, userInfo._id])
+
 	//handle the likes.
 	const likeHandler = () => {
+		try {
+			//handle the like api.
+			axios.put(`${process.env.REACT_APP_API}/like/${post._id}`, {
+				userId: userInfo._id,
+			})
+		} catch (error) {}
 		setLike(isLiked ? like - 1 : like + 1)
 		//will toggle
 		//if true get it to false, if false get it to true
@@ -78,7 +88,11 @@ const Post = ({ post }) => {
 					{/* card body */}
 					<div className='postCardBody'>
 						<p className='postText'>{post?.description}</p>
-						<img src={post?.postImage} className='postImg' alt='' />
+						<img
+							src={`./assets/uploads/${post?.image}`}
+							className='postImg'
+							alt=''
+						/>
 					</div>
 
 					{/* card Footer */}
