@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
-import './post.css'
+import { format } from 'timeago.js'
 import axios from 'axios'
+import './post.css'
+import { Link } from 'react-router-dom'
 
 const Post = ({ post }) => {
 	//get the display pictures.
 	//initially an empty object.
 	const [users, setUsers] = useState({})
-	const [like, setLike] = useState(post.likes)
+	const [like, setLike] = useState(post.likes.length)
 	const [isLiked, setisLiked] = useState(false)
+
+	//get the data in the localstorage.
+	const userInfo = window.localStorage.getItem('userInfo')
+		? JSON.parse(window.localStorage.getItem('userInfo'))
+		: null
 
 	//handle the likes.
 	const likeHandler = () => {
@@ -40,14 +47,27 @@ const Post = ({ post }) => {
 					{/* card header */}
 					<div className='postCardHeader'>
 						<div className='postCardHeaderLeft'>
-							<img
-								src={users.imageProfile}
-								alt='anodi'
-								className='postUserImage'
-							/>
+							{userInfo ? (
+								<Link to={`/account`}>
+									<img
+										src={users.imageProfile}
+										alt='anodi'
+										className='postUserImage'
+									/>
+								</Link>
+							) : (
+								<Link to={`/user/${users.username}`}>
+									<img
+										src={users.imageProfile}
+										alt='xyz'
+										className='postUserImage'
+									/>
+								</Link>
+							)}
+
 							<div className='postInfo'>
 								<span className='postUserName'>{users.username}</span>
-								<span className='postDate'>{post.date}</span>
+								<span className='postDate'>{format(post.createdAt)}</span>
 							</div>
 						</div>
 						<div className='postCardHeaderRight'>

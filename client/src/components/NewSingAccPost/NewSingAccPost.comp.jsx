@@ -1,12 +1,20 @@
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
-import { Users } from '../../data'
+import React, { useEffect, useState } from 'react'
+
+import axios from 'axios'
 import './newsingacc.css'
+import { format } from 'timeago.js'
 
 const NewSingAccPost = ({ post }) => {
-	const [like, setLike] = useState(post.likes)
+	//get the data in the localstorage.
+	const userInfo = window.localStorage.getItem('userInfo')
+		? JSON.parse(window.localStorage.getItem('userInfo'))
+		: null
+
 	const [isLiked, setisLiked] = useState(false)
+	const [users, setUsers] = useState({})
+	const [like, setLike] = useState(post.likes.length)
 
 	//handle the likes.
 	const likeHandler = () => {
@@ -15,6 +23,21 @@ const NewSingAccPost = ({ post }) => {
 		//if true get it to false, if false get it to true
 		setisLiked(!isLiked)
 	}
+
+	//get all post on page start /single-user/:id.
+	useEffect(() => {
+		const fetchUsers = async () => {
+			const resultPost = await axios.get(
+				`${process.env.REACT_APP_API}/${userInfo._id}`
+			)
+
+			//update the state.
+			setUsers(resultPost.data)
+		}
+
+		//call the function.
+		fetchUsers()
+	}, [userInfo._id])
 	return (
 		<div className='nsap'>
 			<div className='nsapGroups'>
@@ -23,17 +46,13 @@ const NewSingAccPost = ({ post }) => {
 					<div className='nsapCardHeader'>
 						<div className='nsapCardHeaderLeft'>
 							<img
-								src={`../${
-									Users.filter(user => user.id === post?.userId)[0].profileImage
-								}`}
-								alt='anodi'
+								src={users.imageProfile}
+								alt={users.username}
 								className='nsapUserImage'
 							/>
 							<div className='nsapInfo'>
-								<span className='nsapUserName'>
-									{Users.filter(user => user.id === post?.userId)[0].username}
-								</span>
-								<span className='nsapDate'>{post.date}</span>
+								<span className='nsapUserName'>{users.username}</span>
+								<span className='nsapDate'>{format(post.createdAt)}</span>
 							</div>
 						</div>
 						<div className='nsapCardHeaderRight'>

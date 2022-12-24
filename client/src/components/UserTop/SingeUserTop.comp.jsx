@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
 	faBell,
 	faMessage,
@@ -26,6 +26,12 @@ const SingeUserTop = () => {
 		//redirect to the, login page.
 		navigate('/login')
 	}
+
+	useEffect(() => {
+		if (!userInfo) {
+			navigate('/login')
+		}
+	}, [userInfo, navigate])
 
 	return (
 		<div className='topNav'>

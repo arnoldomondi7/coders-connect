@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faBell,
@@ -27,6 +27,12 @@ const Topnav = () => {
 		//redirect to the, login page.
 		navigate('/login')
 	}
+
+	useEffect(() => {
+		if (!userInfo) {
+			navigate('/login')
+		}
+	}, [userInfo, navigate])
 	return (
 		<div className='topNav'>
 			{/* step1 */}

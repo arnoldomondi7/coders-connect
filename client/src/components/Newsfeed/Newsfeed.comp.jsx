@@ -10,11 +10,16 @@ const Newsfeed = () => {
 	//the array helps us edit it.
 	const [posts, setPosts] = useState([])
 
+	//get the data in the localstorage.
+	const userInfo = window.localStorage.getItem('userInfo')
+		? JSON.parse(window.localStorage.getItem('userInfo'))
+		: null
+
 	//get all post on page start.
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const resultPost = await axios.get(
-				`${process.env.REACT_APP_API}/all/63a4c52c1300e6e4e47e835c`
+				`${process.env.REACT_APP_API}/all/${userInfo._id}`
 			)
 
 			//update the state.
@@ -24,7 +29,7 @@ const Newsfeed = () => {
 
 		//call the function.
 		fetchPosts()
-	}, [])
+	}, [userInfo])
 
 	return (
 		<div className='newsfeed'>
